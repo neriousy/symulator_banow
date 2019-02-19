@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" id="">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <div class="row">
+        <div class="container">
+            <div class="player">
+                <div class="header">
+                    <span class="tekstGracz">Gracz Pierwszy</span>
+                    <select class="mojaKlasa">
+                    <option>Wojownik</option>
+                    <option>Łucznik</option>
+                    <option>Mag</option>
+                </select>
+                </div>
+                <div class="column">
+                    <select class="sp1_1"></select>
+                    <select class="sp1_2"></select>
+                    <select class="sp1_3"></select>
+                </div>
+            </div>
+
+            <div class="player">
+                <div class="header">
+                    <span class="tekstGracz">Gracz Drugi</span>
+                    <select class="jegoKlasa">
+                    <option>Wojownik</option>
+                    <option>Łucznik</option>
+                    <option>Mag</option>
+                </select>
+                </div>
+                <div class="column">
+                    <select class="sp2_1"></select>
+                    <select class="sp2_2"></select>
+                    <select class="sp2_3"></select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="odbyteWalki">
+            Odbyte Walki:
+        </div>
+    </div>
+    <button type="button" class="wybralem">Wybralem karty</button>
+    <div class="text">
+        <div class="text1_1">
+            <div class="first">Twoje Picki</div>
+            <div class="second">Picked</div>
+            <div class="third">Banned</div>
+        </div>
+
+        <div class="text1_2">
+            <div class="first">Jego Picki</div>
+            <div class="second">Picked</div>
+            <div class="third">Banned</div>
+        </div>
+    </div>
+    <div class="banPick">
+        <div class="twojePicki">
+            <div class="licznik">
+                <input type="text" class="pick1_1" disabled>
+                <input type="text" class="picked1_1 licze" disabled value="0">
+                <input type="text" class="banned1_1 licze" disabled value="0">
+            </div>
+            <div class="licznik">
+                <input type="text" class="pick1_2" disabled>
+                <input type="text" class="picked1_2 licze" disabled value="0">
+                <input type="text" class="banned1_2 licze" disabled value="0">
+            </div>
+            <div class="licznik">
+                <input type="text" class="pick1_3" disabled>
+                <input type="text" class="picked1_3 licze" disabled value="0">
+                <input type="text" class="banned1_3 licze" disabled value="0">
+            </div>
+        </div>
+
+        <div class="jegoPicki">
+            <div class="licznik">
+                <input type="text" class="pick2_1" disabled>
+                <input type="text" class="picked2_1 licze" disabled value="0">
+                <input type="text" class="banned2_1 licze" disabled value="0">
+            </div>
+            <div class="licznik">
+                <input type="text" class="pick2_2" disabled>
+                <input type="text" class="picked2_2 licze" disabled value="0">
+                <input type="text" class="banned2_2 licze" disabled value="0">
+            </div>
+            <div class="licznik">
+                <input type="text" class="pick2_3" disabled>
+                <input type="text" class="picked2_3 licze" disabled value="0">
+                <input type="text" class="banned2_3 licze" disabled value="0">
+            </div>
+        </div>
+    </div>
+
+    <div class="listaWalk">Lista Walk</div>
+
+    <div class="walka">
+        <div class="picki">
+            <div class="textColumn">
+                TWOJ PICK
+                <select class="gracz1"></select>
+            </div>
+            VS
+            <div class="textColumn">
+                JEGO PICK
+                <select class="gracz2"></select>
+            </div>
+        </div>
+        <div class="bany">
+            <div class="textColumn">
+                TWOJ BAN
+                <select class="banTwoj"></select>
+            </div>
+
+            <div class="textColumn">
+                JEGO BAN
+                <select class="banJego"></select>
+            </div>
+        </div>
+    </div>
+    <div class="buttony">
+        <button type="button" class="dodajWalke">Dodaj walke</button>
+        <button type="button" class="wyzeruj">Zresetuj Stronę</button>
+    </div>
+
+    
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(img/tlo.jpg);
+    background-size:cover;
+    display:flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    height:300px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    border:4px solid #000;
+    border-radius:20px;
+    margin-top:150px;
+    margin-left:250px;
+}
+.player:nth-child(1){
+    border-right: 4px solid #000;
+}
+
+.header{
+    display:flex;
+    flex-direction: column;
+    height:50px;
+    color:#fff;
+    text-align: center;
+    justify-content: space-between;
+    font-size:24px;
+}
+.player{
+    width:500px;
+    height:300px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column{
+    display:flex;
+    flex-direction: column;
+    margin-top:30px;
+}
+select{
+    width:200px;
+    font-family: 'Montserrat', sans-serif;
+    background-color:#2c2469;
+    color:#fff;
+    width:250px;
+    height:25px;
+    border:1px solid #fff;
+}
+
+.column select{
+    margin:20px;
+    width:250px;
+    background-color:#2c2469;
+    color:#fff;
+    border-radius:20px;
+    height:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.wybralem, .dodajWalke, .wyzeruj{
+    margin-top:20px;
+    padding:10px;
+    width:150px;
+    background-color:#2c2469;
+    color:#fff;
+    border-radius: 20px;
+}
+.wybralem{
+    position:relative;
+    right:130px;
+    margin:10px;
+}
+.wybralem:hover, .dodajWalke:hover, .wyzeruj:hover{
+    background-color:#40387e;
+}
+
+.banPick{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width:1000px;
+}
+
+.twojePicki, .jegoPicki{
+    display:flex;
+    flex-direction: column;
+}
+
+.twojePicki input, .jegoPicki input{
+    margin:10px;
+    width:250px;
+}
+
+.licznik{
+    display:flex;
+    width:500px;
+}
+
+.licznik .licze{
+    width:25px;
+    text-align: center;
+}
+
+.text{
+    width:1000px;
+    color:#fff;
+    display:flex;
+}
+.first{
+    margin-left:10px;
+    width:250px;
+    text-align:center;
+}
+
+.third{
+    margin-right:110px;
+}
+.text1_1, .text1_2{
+    width:500px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.listaWalk{
+    color:#fff;
+    font-size:36px;
+    border-top:10px solid #000;
+    border-bottom:10px solid #000;
+    width:100%;
+    text-align: center;
+}
+
+.walka{
+    color:#fff;
+    display:flex;
+    align-content: center;
+    flex-direction: column;
+}
+.textColumn{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+.walka select{
+    width:200px;
+    display:flex;   
+}
+
+.picki{
+    display:flex;
+}
+
+.bany{
+    display:flex;
+}
+.textColumn select{
+    margin:5px;
+}
+.bany .textColumn:nth-child(2){
+     margin-left:20px;   
+}
+.buttony{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttony button:nth-child(1){
+    margin-right:40px;
+}
+
+.buttony button:nth-child(2){
+    margin-left:40px;
+}
+p{
+    margin:5px;
+    padding:0;
+}
+.odbyteWalki{
+    width:20%;
+    display:flex;
+    text-align:center;
+    font-size:24px;
+    color:#fff;
+    flex-direction: column;
+    overflow-y:scroll;
+    height:300px;
+    margin-top:150px;
+    border:4px solid #000;
+    border-right:0;
+}
+
+.row{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+}
