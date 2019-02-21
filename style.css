@@ -35,6 +35,7 @@ body {
     color:#fff;
     text-align: center;
     justify-content: space-between;
+    align-items: center;
     font-size:24px;
 }
 .player{
@@ -232,14 +233,15 @@ p{
     .player{
         width:50%;
     }
-    
+    .mojaKlasa, .jegoKlasa{
+        width:11em;
+    }
     .odbyteWalki{
         display: none;
     }
-    
-    
+
     .column select{
-        width:10em;
+        width:11em;
     }
     .row{
         justify-content: center;
@@ -250,11 +252,17 @@ p{
     }
     .wrapper{
         font-size:10px;
+        margin:0
     }
     .wrapper:nth-child(1) input:nth-child(1){
-         width:7em;   
+         width:4.5em;   
     }
-    
+    .wrapper:nth-child(2), .wrapper:nth-child(3){
+        width:45px;
+    }
+    .picki select, .bany select{
+        width:10em;
+    }
     .wybralem{
         left:0;
     }
