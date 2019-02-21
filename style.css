@@ -1,21 +1,22 @@
 body {
     padding: 0;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
     font-family: 'Montserrat', sans-serif;
     background-image: url(img/tlo.jpg);
     background-size:cover;
+    background-repeat: no-repeat;
+    background-color:#000;
     display:flex;
     align-content: center;
     align-items: center;
     flex-direction: column;
+    width:100%;
 }
 
 .container{
     height:300px;
     display:flex;
+    width:50%;
     justify-content: flex-start;
     align-items: center;
     border:4px solid #000;
@@ -37,7 +38,7 @@ body {
     font-size:24px;
 }
 .player{
-    width:500px;
+    width:50%;
     height:300px;
     display:flex;
     flex-direction: column;
@@ -54,14 +55,13 @@ select{
     font-family: 'Montserrat', sans-serif;
     background-color:#2c2469;
     color:#fff;
-    width:250px;
     height:25px;
     border:1px solid #fff;
 }
 
 .column select{
     margin:20px;
-    width:250px;
+    width:18em;
     background-color:#2c2469;
     color:#fff;
     border-radius:20px;
@@ -93,7 +93,6 @@ select{
     display:flex;
     justify-content: space-between;
     flex-direction: row;
-    width:1000px;
 }
 
 .twojePicki, .jegoPicki{
@@ -103,37 +102,16 @@ select{
 
 .twojePicki input, .jegoPicki input{
     margin:10px;
-    width:250px;
+    width:17em;
 }
 
 .licznik{
     display:flex;
-    width:500px;
 }
 
 .licznik .licze{
     width:25px;
     text-align: center;
-}
-
-.text{
-    width:1000px;
-    color:#fff;
-    display:flex;
-}
-.first{
-    margin-left:10px;
-    width:250px;
-    text-align:center;
-}
-
-.third{
-    margin-right:110px;
-}
-.text1_1, .text1_2{
-    width:500px;
-    display:flex;
-    justify-content: space-between;
 }
 
 .listaWalk{
@@ -157,7 +135,7 @@ select{
     text-align: center;
 }
 .walka select{
-    width:200px;
+    width:18em;
     display:flex;   
 }
 
@@ -211,4 +189,64 @@ p{
     justify-content: space-around;
     align-items: center;
     width:100%;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:#fff;
+    font-size:18px;
+    margin:2px;
+}
+
+.wrapper:nth-child(2){
+    width:80px;
+}
+
+.wrapper:nth-child(3){
+    width:80px;
+}
+
+
+@media only screen and (max-width: 767px) {
+    body{
+        background-repeat: no-repeat;
+        background-color: #000;
+        background-position:center;
+    }
+    .container{
+        margin:0;
+        width:100%;
+    }
+    .player{
+        width:50%;
+    }
+    
+    .odbyteWalki{
+        display: none;
+    }
+    
+    
+    .column select{
+        width:10em;
+    }
+    .row{
+        justify-content: center;
+    }
+    
+    .banPick{
+        width:100%;
+    }
+    .wrapper{
+        font-size:10px;
+    }
+    .wrapper:nth-child(1) input:nth-child(1){
+         width:7em;   
+    }
+    
+    .wybralem{
+        left:0;
+    }
 }

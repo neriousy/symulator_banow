@@ -72,57 +72,102 @@ jegoKlasa.addEventListener("change", function () {
 
 
 wybralem.addEventListener("click", function () {
-    for (let i = 0; i < 3; i++) {
-        wybraneMoje[i].value = wybraneSP1[kartyPierwszego[i].selectedIndex];
-        wybraneJego[i].value = wybraneSP2[kartyDrugiego[i].selectedIndex];
-    }
-    do {
-        graczPierwszy.options[0] = null;
-        graczDrugi.options[0] = null;
-        banTwoj.options[0] = null;
-        banJego.options[0] = null;
+    if (kartyPierwszego[0].options[0] == null) {
+        alert("Wybierz karty");
+    } else if (kartyDrugiego[0].options[0] == null) {
+        alert("Wybierz karty");
+    } else if (kartyPierwszego[0].options[kartyPierwszego[0].selectedIndex].text == kartyPierwszego[1].options[kartyPierwszego[1].selectedIndex].text) {
+        alert("Karty muszą być różne");
+    } else if (kartyPierwszego[0].options[kartyPierwszego[0].selectedIndex].text == kartyPierwszego[2].options[kartyPierwszego[2].selectedIndex].text) {
+        alert("Karty muszą być różne");
+    } else if (kartyPierwszego[1].options[kartyPierwszego[1].selectedIndex].text == kartyPierwszego[2].options[kartyPierwszego[2].selectedIndex].text) {
+        alert("Karty muszą być różne");
+    } else if (kartyDrugiego[0].options[kartyDrugiego[0].selectedIndex].text == kartyDrugiego[1].options[kartyDrugiego[1].selectedIndex].text) {
+        alert("Karty muszą być różne");
+    } else if (kartyDrugiego[0].options[kartyDrugiego[0].selectedIndex].text == kartyDrugiego[2].options[kartyDrugiego[2].selectedIndex].text) {
+        alert("Karty muszą być różne");
+    } else if (kartyDrugiego[1].options[kartyDrugiego[1].selectedIndex].text == kartyDrugiego[2].options[kartyDrugiego[2].selectedIndex].text) {
+        alert("Karty muszą być różne");
+    } else {
+        for (let i = 0; i < 3; i++) {
+            wybraneMoje[i].value = wybraneSP1[kartyPierwszego[i].selectedIndex];
+            wybraneJego[i].value = wybraneSP2[kartyDrugiego[i].selectedIndex];
+        }
+        do {
+            graczPierwszy.options[0] = null;
+            graczDrugi.options[0] = null;
+            banTwoj.options[0] = null;
+            banJego.options[0] = null;
+        }
+
+        while (graczPierwszy.options[0] != null);
+        for (let i = 0; i < 3; i++) {
+            graczPierwszy.options[i] = new Option(wybraneMoje[i].value, i);
+            graczDrugi.options[i] = new Option(wybraneJego[i].value, i);
+            banTwoj.options[i] = new Option(wybraneJego[i].value, i);
+            banJego.options[i] = new Option(wybraneMoje[i].value, i);
+        }
     }
 
-    while (graczPierwszy.options[0] != null);
-    for (let i = 0; i < 3; i++) {
-        graczPierwszy.options[i] = new Option(wybraneMoje[i].value, i);
-        graczDrugi.options[i] = new Option(wybraneJego[i].value, i);
-        banTwoj.options[i] = new Option(wybraneJego[i].value, i);
-        banJego.options[i] = new Option(wybraneMoje[i].value, i);
-    }
+
 });
 
 dodajWalke.addEventListener("click", function () {
-    for (let i = 0; i < 3; i++) {
-        if (graczPierwszy.options[graczPierwszy.selectedIndex].text == wybraneMoje[i].value){
-            pickedMoje[i].value++;
+    if (graczPierwszy.options[graczPierwszy.selectedIndex].text == banJego.options[banJego.selectedIndex].text) {
+        alert("Bany i picki nie mogą się nakładać na siebie, sprawdź jeszcze raz!");
+    } else if (graczDrugi.options[graczDrugi.selectedIndex].text == banTwoj.options[banTwoj.selectedIndex].text) {
+        alert("Bany i picki nie mogą się nakładać na siebie, sprawdź jeszcze raz!");
+    } else {
+
+        for (let i = 0; i < 3; i++) {
+            if (graczPierwszy.options[graczPierwszy.selectedIndex].innerHTML == wybraneMoje[i].value) {
+                pickedMoje[i].value++;
+                if (pickedMoje[i].value == 3) {
+                    graczPierwszy.options[graczPierwszy.selectedIndex] = null;
+
+                }
+            }
+
+            if (graczDrugi.options[graczDrugi.selectedIndex].innerHTML == wybraneJego[i].value) {
+                pickedJego[i].value++;
+                if (pickedJego[i].value == 3) {
+                    graczDrugi.options[graczDrugi.selectedIndex] = null;
+                }
+            }
+
+            if (banTwoj.options[banTwoj.selectedIndex].innerHTML == wybraneJego[i].value) {
+                bannedJego[i].value++;
+                if (bannedJego[i].value == 2) {
+                    banTwoj.options[banTwoj.selectedIndex] = null;
+                    if(banTwoj.options[0] == null){
+                        banTwoj.options[banTwoj.options.length] = new Option("Brak bana", 1);
+                    }
+                }
+
+            }
+
+            if (banJego.options[banJego.selectedIndex].innerHTML == wybraneMoje[i].value) {
+                bannedMoje[i].value++;
+                if (bannedMoje[i].value == 2) {
+                    banJego.options[banJego.selectedIndex] = null;
+                    if(banJego.options[0] == null){
+                        banJego.options[banJego.options.length] = new Option("Brak bana", 1);
+                    }
+                }
+            }
         }
-        
-        if (graczDrugi.options[graczDrugi.selectedIndex].text == wybraneJego[i].value){
-            pickedJego[i].value++;
-        }
-        
-        if (banTwoj.options[banTwoj.selectedIndex].text == wybraneJego[i].value){
-            bannedJego[i].value++;
-        }
-        
-        if (banJego.options[banJego.selectedIndex].text == wybraneMoje[i].value){
-            bannedMoje[i].value++;
-        }
+        odbyteWalki.innerHTML += "<div> Walka " + numer + "</div>" + "<p> <b> Picki: </b>" + graczPierwszy.options[graczPierwszy.selectedIndex].innerHTML + " vs " + graczDrugi.options[graczDrugi.selectedIndex].innerHTML + "<br> <b> Bany: </b>" + banTwoj.options[banTwoj.selectedIndex].innerHTML + ", " + banJego.options[banJego.selectedIndex].innerHTML + "</p>";
+        numer++;
     }
-    
-    odbyteWalki.innerHTML += "<div> Walka " + numer  + "</div>" +"<p> <b> Picki: </b>" + graczPierwszy.options[graczPierwszy.selectedIndex].text + " vs " + graczDrugi.options[graczDrugi.selectedIndex].text + "<br> <b> Bany: </b>" + banTwoj.options[banTwoj.selectedIndex].text + ", " + banJego.options[banJego.selectedIndex].text + "</p>";
-    numer++;
 });
 
-wyzeruj.addEventListener("click", function(){
-   for (let i=0; i<3; i++){
-       pickedMoje[i].value = 0;
-       pickedJego[i].value = 0;
-       bannedMoje[i].value = 0;
-       bannedJego[i].value = 0;
-   } 
-    
+wyzeruj.addEventListener("click", function () {
+    for (let i = 0; i < 3; i++) {
+        pickedMoje[i].value = 0;
+        pickedJego[i].value = 0;
+        bannedMoje[i].value = 0;
+        bannedJego[i].value = 0;
+    }
     numer = 1;
     odbyteWalki.innerHTML = "Odbyte walki: ";
 });
