@@ -22,6 +22,16 @@ let bannedMoje = [document.querySelector(".banned1_1"), document.querySelector("
 let bannedJego = [document.querySelector(".banned2_1"), document.querySelector(".banned2_2"), document.querySelector(".banned2_3"), document.querySelector(".banned2_4")];
 let numer = 1;
 let wyzeruj = document.querySelector(".wyzeruj");
+
+window.onload = function(){
+     for (let j = 0; j < 3; j++){
+         for (let i = 0; i < 8; i++) {
+            kartyPierwszego[j].options[kartyPierwszego[j].options.length] = new Option(wybraneSP1[i].toString(), i);
+             
+             kartyDrugiego[j].options[kartyDrugiego[j].options.length] = new Option(wybraneSP2[i].toString(), i);
+        }
+     }
+}
 mojaKlasa.addEventListener("change", function () {
     for (let j = 0; j < 3; j++) {
 
