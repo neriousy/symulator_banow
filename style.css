@@ -209,7 +209,16 @@ p{
     width:80px;
 }
 
-
+.stopka{
+    width:100%;
+    color:#fff;
+    text-align:right;
+    display:flex;
+    flex-direction: column;
+    font-weight: bold;
+    align-self:flex-start;
+    margin-top:20px;
+}
 @media only screen and (max-width: 767px) {
     body{
         background-repeat: no-repeat;
@@ -249,4 +258,5 @@ p{
     .wybralem{
         left:0;
     }
+
 }
