@@ -8,8 +8,8 @@ let jegoKlasa = document.querySelector(".jegoKlasa");
 let kartyPierwszego = [document.querySelector(".sp1_1"), document.querySelector(".sp1_2"), document.querySelector(".sp1_3")];
 let kartyDrugiego = [document.querySelector(".sp2_1"), document.querySelector(".sp2_2"), document.querySelector(".sp2_3")];
 let wybralem = document.querySelector(".wybralem");
-let wybraneMoje = [document.querySelector(".pick1_1"), document.querySelector(".pick1_2"), document.querySelector(".pick1_3")];
-let wybraneJego = [document.querySelector(".pick2_1"), document.querySelector(".pick2_2"), document.querySelector(".pick2_3")];
+let wybraneMoje = [document.querySelector(".pick1_1"), document.querySelector(".pick1_2"), document.querySelector(".pick1_3"), document.querySelector(".pick1_4")];
+let wybraneJego = [document.querySelector(".pick2_1"), document.querySelector(".pick2_2"), document.querySelector(".pick2_3"), document.querySelector(".pick2_4")];
 let graczPierwszy = document.querySelector(".gracz1");
 let graczDrugi = document.querySelector(".gracz2");
 let banTwoj = document.querySelector(".banTwoj");
@@ -18,8 +18,8 @@ let dodajWalke = document.querySelector(".dodajWalke");
 let odbyteWalki = document.querySelector(".odbyteWalki");
 let pickedMoje = [document.querySelector(".picked1_1"), document.querySelector(".picked1_2"), document.querySelector(".picked1_3")];
 let pickedJego = [document.querySelector(".picked2_1"), document.querySelector(".picked2_2"), document.querySelector(".picked2_3")];
-let bannedMoje = [document.querySelector(".banned1_1"), document.querySelector(".banned1_2"), document.querySelector(".banned1_3")];
-let bannedJego = [document.querySelector(".banned2_1"), document.querySelector(".banned2_2"), document.querySelector(".banned2_3")];
+let bannedMoje = [document.querySelector(".banned1_1"), document.querySelector(".banned1_2"), document.querySelector(".banned1_3"), document.querySelector(".banned1_4")];
+let bannedJego = [document.querySelector(".banned2_1"), document.querySelector(".banned2_2"), document.querySelector(".banned2_3"), document.querySelector(".banned2_4")];
 let numer = 1;
 let wyzeruj = document.querySelector(".wyzeruj");
 mojaKlasa.addEventListener("change", function () {
@@ -107,6 +107,9 @@ wybralem.addEventListener("click", function () {
             banTwoj.options[i] = new Option(wybraneJego[i].value, i);
             banJego.options[i] = new Option(wybraneMoje[i].value, i);
         }
+        
+        banTwoj.options[3] = new Option("Nic", 3);
+        banJego.options[3] = new Option("Nic", 3);
     }
 
 
@@ -119,7 +122,7 @@ dodajWalke.addEventListener("click", function () {
         alert("Bany i picki nie mogą się nakładać na siebie, sprawdź jeszcze raz!");
     } else {
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 4; i++) {
             if (graczPierwszy.options[graczPierwszy.selectedIndex].innerHTML == wybraneMoje[i].value) {
                 pickedMoje[i].value++;
                 if (pickedMoje[i].value == 3) {
@@ -162,7 +165,7 @@ dodajWalke.addEventListener("click", function () {
 });
 
 wyzeruj.addEventListener("click", function () {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
         pickedMoje[i].value = 0;
         pickedJego[i].value = 0;
         bannedMoje[i].value = 0;
