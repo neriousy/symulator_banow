@@ -176,11 +176,15 @@ dodajWalke.addEventListener("click", function () {
 
 wyzeruj.addEventListener("click", function () {
     for (let i = 0; i < 4; i++) {
-        pickedMoje[i].value = 0;
-        pickedJego[i].value = 0;
         bannedMoje[i].value = 0;
         bannedJego[i].value = 0;
     }
+    
+    for (let i = 0; i < 3; i++) {
+        pickedMoje[i].value = 0;
+        pickedJego[i].value = 0;
+    }
     numer = 1;
     odbyteWalki.innerHTML = "Odbyte walki: ";
+    wybralem.click();
 });
